@@ -2,7 +2,7 @@ import ButtonList from "./ButtonList";
 import VideoContainer from "./VideoContainer";
 const MainContent= ()=>{
 return (
-    <div className="">
+    <div className="w-screen">
        <ButtonList/>
        <VideoContainer/>
     </div>

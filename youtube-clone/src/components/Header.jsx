@@ -1,11 +1,17 @@
 import menuicon from "../assets/burger-menu.svg";
 import youtubeicon from "../assets/youtube.svg";
 import usericon from '../assets/user.png';
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
 const Header = () => {
+  const dispatch =useDispatch();
+  const toggleMenuHandler =()=>{
+    dispatch(toggleMenu())
+  }
   return (
-    <div className="grid grid-flow-col p-5 m-2 shadow">
+    <div className="grid grid-flow-col p-5 m-2 shadow w-screen ">
       <div className="flex col-span-1 ">
-        <img src={menuicon} alt="menu icon" className="h-8  " />
+        <img onClick={()=>toggleMenuHandler()} src={menuicon} alt="menu icon" className="h-8 cursor-pointer " />
         <img src={youtubeicon} alt="youtube icon" className="h-8 mx-1" />
       </div>
 
