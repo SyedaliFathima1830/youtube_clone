@@ -13,6 +13,7 @@ import { CiYoutube, CiSettings, CiFlag1 } from "react-icons/ci";
 import { VscFeedback } from "react-icons/vsc";
 import { FiHelpCircle } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const SideBar = () => {
 let isMenuOpen = useSelector((store)=>store.appSlice.isMenuOpen)
   if(!isMenuOpen) return null;
@@ -20,11 +21,13 @@ let isMenuOpen = useSelector((store)=>store.appSlice.isMenuOpen)
     <div className="w-45 p-3 shadow-lg  ">
       <div className="border-b border-gray-400 my-2 pb-2">
         <div className="flex items-center gap-2 text-black py-2">
+        
           <div>
             <AiFillHome />
           </div>
-          <div>Home</div>
+          <div> <Link to= '/'>Home</Link></div>
         </div>
+     
         <div className="flex items-center gap-2 text-black py-2">
           <div>
             <MdOutlineExplore />

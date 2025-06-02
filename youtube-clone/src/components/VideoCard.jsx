@@ -1,5 +1,4 @@
 export const VideoCard =({info})=>{
-    console.log("info",info);
     
 
     const {snippet,statistics} = info;
