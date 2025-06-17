@@ -18,10 +18,10 @@ const [videos,setVideos]=useState([])
         <div className="flex flex-wrap m-3">
             {
 
-                videos.map((video)=>(
+                videos.map((video,index)=>(
                 
        <Link to ={"/watch?v="+video.id}>    
-<VideoCard key={video.id} info ={video}/> </Link>    
+<VideoCard key={video.id || index} info ={video}/> </Link>    
                 ))
               
             }

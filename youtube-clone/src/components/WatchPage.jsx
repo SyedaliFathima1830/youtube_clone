@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { SINGLEVIDEO_DETAIL } from "../utils/constants";
 import { SuggestedList } from "./SuggestedList";
 import { formatDistanceToNow, parseISO } from 'date-fns';
+import CommentContainer from "./CommentsContainer";
 const WatchPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
@@ -32,6 +33,7 @@ const WatchPage = () => {
   return (
     <div className="px-5 grid grid-flow-col">
       <div className="col-span-11">
+        <div></div>
         <iframe
           width="800"
           height="600"
@@ -42,7 +44,7 @@ const WatchPage = () => {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
-        <div className="font-bold text-2xl">{title}</div>
+        <div className="font-bold text-2xl w-200">{title}</div>
         <div className="flex w-full justify-between">
           <div className="flex">
             <img
@@ -73,8 +75,15 @@ const WatchPage = () => {
         </div>
         <div className="font-bold ">
           {commentCount}  views - {timeAgo}
-          <div className="font-light">{description}</div>
+          <div className={`font-light  w-200 ${!showLess ? "truncate w-200" : ''}`}>{description}</div>
+          { !showLess &&
+           <div onClick={()=>setShowLess(true)}> more </div>
+          }
+          { showLess &&
+           <div onClick={()=>setShowLess(false)}> show less </div>
+          }
         </div>
+        <CommentContainer/>
       </div>
 
       <div className="col-span-1">

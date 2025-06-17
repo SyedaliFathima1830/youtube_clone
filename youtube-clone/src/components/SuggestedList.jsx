@@ -20,6 +20,7 @@ if(!suggestedVideos.length) return   <div>loading</div>;
     return(
         <div>
             {
+                
                 suggestedVideos.map((item)=>(
                     <SuggestedCard key={item.id} items={item}/>
                 ))
