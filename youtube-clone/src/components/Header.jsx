@@ -86,17 +86,19 @@ setSuggestions(searchCache[searchText])
           🔍
         </button>
 
-        <div className="fixed bg-white px-4 w-[24rem] rounded-2xl shadow shadow-gray-100 ">
-          <ul className="px-2 py-3  ">
+       
           {  showSuggestion &&  
             (suggestions.map((s,index)=>(
+              <div className="fixed bg-white px-4 w-[24rem] rounded-2xl shadow shadow-gray-100 ">
+          <ul className="px-2 py-3  ">
              <li key={index} className="flex p-1"> <CiSearch className="mx-1" /> {s} </li>
-            )))
+           
+             </ul>
+             </div> )))
            }
               
            
-          </ul>
-        </div>
+       
       </div>
 
       <div className="col-span-1">
